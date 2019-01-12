@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
   port: 3306,
   user: "root",
   password: "root",
-  database: "bamazon"
+  database: "bamazon_db"
 });
 
 function bamazonProduct (){
@@ -19,8 +19,8 @@ function bamazonProduct (){
         console.log("Bamazon Products: ");
         console.log("--------------------")
         for(var i = 0; i < res.length; i++) {
-            console.log("PRODUCT ID " + res[i].item_id + "PRODUCT " + res[i].product_name + 
-            "PRODUCT PRICE " + res[i].price);
+            console.log("PRODUCT ID: " + res[i].item_id + "             PRODUCT:     " + res[i].product_name + 
+            "                  PRODUCT PRICE:  " + res[i].price);
             customerRequest.push(res[i].product_name);
         }
 
@@ -34,7 +34,7 @@ function userPurchase(){
         {
             type: "list",
             message: "What would you like to purchase today?",
-            choices: productList,
+            choices: customerRequest,
             name: "product"
           },
           {
