@@ -21,6 +21,5 @@
 * NodeJS
 * JavaScript
 * NPM Inquirer
-* NPM Colors
-* NPM console.table
+
 
